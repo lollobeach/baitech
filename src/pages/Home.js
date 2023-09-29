@@ -6,10 +6,14 @@ import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import TextAnimation from "../components/TextAnimation";
 import ComponentsAnimations from "../components/ComponentsAnimations";
 
-import BackgroundLarge from "../images/backgroundLarge.jpeg";
-import BackgroundMedium from "../images/backgroundTablet.jpg";
-import BackgroundSmall from "../images/backgroundMobile.jpg";
-import BackgroundExtraSmall from "../images/backgroundExtraSmall.jpg"
+import BackgroundXXXL from "../images/backgroundXXXL.jpeg";
+import BackgroundXXL from "../images/backgroundXXL.jpg"
+import BackgroundXL from "../images/backgroundXL.jpg";
+import BackgroundL from "../images/backgroundL.jpeg";
+import BackgroundM from "../images/backgroundM.jpg";
+import BackgroundSM from "../images/backgroundSM.jpg";
+import BackgroundS from "../images/backgroundS.jpg";
+import BackgroundExtraSmall from "../images/backgroundXS.jpg";
 
 export default function Home() {
   const [renderComponent, setRenderComponent] = useState(true);
@@ -36,12 +40,112 @@ export default function Home() {
   return (
     <>
       <ComponentsAnimations>
-        {/* Large screen */}
+        {/* XXXL screen */}
         <Box
           position="fixed"
           zIndex={-2}
           sx={{
             display: {
+              xxxlg: "inline",
+              xxlg: "none",
+              xlg: "none",
+              lg: "none",
+              md: "none",
+              sm: "none",
+              s: "none",
+              xs: "none",
+            },
+          }}
+        >
+          <img
+            alt="background_xxxl"
+            src={BackgroundXXXL}
+            // style={{ transform: "scaleX(-1)" }}
+          />
+        </Box>
+
+        {/* XXL screen */}
+        <Box
+          position="fixed"
+          zIndex={-2}
+          sx={{
+            display: {
+              xxxlg: "none",
+              xxlg: "inline",
+              xlg: "none",
+              lg: "none",
+              md: "none",
+              sm: "none",
+              s: "none",
+              xs: "none",
+            },
+          }}
+        >
+          <img
+            alt="background_xxl"
+            src={BackgroundXXL}
+            // style={{ transform: "scaleX(-1)" }}
+          />
+        </Box>
+
+        {/* XL screen */}
+        <Box
+          position="fixed"
+          zIndex={-2}
+          sx={{
+            display: {
+              xxxlg: "none",
+              xxlg: "none",
+              xlg: "inline",
+              lg: "none",
+              md: "none",
+              sm: "none",
+              s: "none",
+              xs: "none",
+            },
+          }}
+        >
+          <img
+            alt="background_xl"
+            src={BackgroundXL}
+            // style={{ transform: "scaleX(-1)" }}
+          />
+        </Box>
+
+        {/* L screen */}
+        <Box
+          position="fixed"
+          zIndex={-2}
+          sx={{
+            display: {
+              xxxlg: "none",
+              xxlg: "none",
+              xlg: "none",
+              lg: "inline",
+              md: "none",
+              sm: "none",
+              s: "none",
+              xs: "none",
+            },
+          }}
+        >
+          <img
+            alt="background_l"
+            src={BackgroundL}
+            // style={{ transform: "scaleX(-1)" }}
+          />
+        </Box>
+
+        {/* M screen */}
+        <Box
+          position="fixed"
+          zIndex={-2}
+          sx={{
+            display: {
+              xxxlg: "none",
+              xxlg: "none",
+              xlg: "none",
+              lg: "none",
               md: "inline",
               sm: "none",
               s: "none",
@@ -50,18 +154,22 @@ export default function Home() {
           }}
         >
           <img
-            alt="background_large"
-            src={BackgroundLarge}
+            alt="background_m"
+            src={BackgroundM}
             // style={{ transform: "scaleX(-1)" }}
           />
         </Box>
 
-        {/* Medium screen */}
+        {/* SM screen */}
         <Box
           position="fixed"
           zIndex={-2}
           sx={{
             display: {
+              xxxlg: "none",
+              xxlg: "none",
+              xlg: "none",
+              lg: "none",
               md: "none",
               sm: "inline",
               s: "none",
@@ -70,18 +178,22 @@ export default function Home() {
           }}
         >
           <img
-            alt="background_medium"
-            src={BackgroundMedium}
+            alt="background_sm"
+            src={BackgroundSM}
             // style={{ transform: "scaleX(-1)" }}
           />
         </Box>
 
-        {/* Small screen */}
+        {/* S screen */}
         <Box
           position="fixed"
           zIndex={-2}
           sx={{
             display: {
+              xxxlg: "none",
+              xxlg: "none",
+              xlg: "none",
+              lg: "none",
               md: "none",
               sm: "none",
               s: "inline",
@@ -90,18 +202,22 @@ export default function Home() {
           }}
         >
           <img
-            alt="background_small"
-            src={BackgroundSmall}
+            alt="background_s"
+            src={BackgroundS}
             // style={{ transform: "scaleX(-1)" }}
           />
         </Box>
 
-        {/* Extra small screen */}
+        {/* XS screen */}
         <Box
           position="fixed"
           zIndex={-2}
           sx={{
             display: {
+              xxxlg: "none",
+              xxlg: "none",
+              xlg: "none",
+              lg: "none",
               md: "none",
               sm: "none",
               s: "none",
