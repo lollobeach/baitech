@@ -12,19 +12,19 @@ const responsiveFontSize = ({ xs, s, sm, md, lg, xl, xxl }) => {
     "@media (min-width: 360px)": {
       fontSize: pxToRem(s)
     },
-    "@media (min-width:390px)": {
+    "@media (min-width:480px)": {
       fontSize: pxToRem(sm),
     },
-    "@media (min-width:600px)": {
+    "@media (min-width:768px)": {
       fontSize: pxToRem(md),
     },
-    "@media (min-width:800px)": {
+    "@media (min-width:1024px)": {
       fontSize: pxToRem(lg),
     },
-    "@media (min-width:1100px)": {
+    "@media (min-width:1200px)": {
       fontSize: pxToRem(xl),
     },
-    "@media (min-width:1550px)": {
+    "@media (min-width:1920px)": {
       fontSize: pxToRem(xxl),
     },
   };
@@ -43,10 +43,13 @@ export const theme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
-      s: 430,
-      sm: 740,
-      md: 1100,
+      s: 480,
+      sm: 1024,
+      md: 1200,
       lg: 1920,
+      xlg: 2200,
+      xxlg: 3200,
+      xxxlg: 3600
     },
   },
 
