@@ -4,22 +4,24 @@ import React, { useEffect, useState, useRef } from "react";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 
 import TextAnimation from "../components/TextAnimation";
-import ComponentsAnimations from "../components/ComponentsAnimations";
 
 import BackgroundXXXL from "../images/backgroundXXXL.jpeg";
-import BackgroundXXL from "../images/backgroundXXL.jpg"
+import BackgroundXXL from "../images/backgroundXXL.jpg";
 import BackgroundXL from "../images/backgroundXL.jpg";
 import BackgroundL from "../images/backgroundL.jpeg";
 import BackgroundM from "../images/backgroundM.jpg";
 import BackgroundSM from "../images/backgroundSM.jpg";
 import BackgroundS from "../images/backgroundS.jpg";
-import BackgroundExtraSmall from "../images/backgroundXS.jpg";
+import BackgroundXS from "../images/backgroundXS.jpg";
+import { useOutletContext } from "react-router-dom";
 
-export default function Home() {
+export default function Home () {
   const [renderComponent, setRenderComponent] = useState(true);
   const [stackHeight, setStackHeight] = useState(0);
 
   const ref = useRef(null);
+
+  const navbarHeight = useOutletContext()
 
   useEffect(() => {
     setStackHeight(ref.current.clientHeight);
@@ -39,7 +41,6 @@ export default function Home() {
 
   return (
     <>
-      <ComponentsAnimations>
         {/* XXXL screen */}
         <Box
           position="fixed"
@@ -57,11 +58,7 @@ export default function Home() {
             },
           }}
         >
-          <img
-            alt="background_xxxl"
-            src={BackgroundXXXL}
-            // style={{ transform: "scaleX(-1)" }}
-          />
+          <img alt="background_xxxl" src={BackgroundXXXL} />
         </Box>
 
         {/* XXL screen */}
@@ -81,11 +78,7 @@ export default function Home() {
             },
           }}
         >
-          <img
-            alt="background_xxl"
-            src={BackgroundXXL}
-            // style={{ transform: "scaleX(-1)" }}
-          />
+          <img alt="background_xxl" src={BackgroundXXL} />
         </Box>
 
         {/* XL screen */}
@@ -105,11 +98,7 @@ export default function Home() {
             },
           }}
         >
-          <img
-            alt="background_xl"
-            src={BackgroundXL}
-            // style={{ transform: "scaleX(-1)" }}
-          />
+          <img alt="background_xl" src={BackgroundXL} />
         </Box>
 
         {/* L screen */}
@@ -129,11 +118,7 @@ export default function Home() {
             },
           }}
         >
-          <img
-            alt="background_l"
-            src={BackgroundL}
-            // style={{ transform: "scaleX(-1)" }}
-          />
+          <img alt="background_l" src={BackgroundL} />
         </Box>
 
         {/* M screen */}
@@ -153,11 +138,7 @@ export default function Home() {
             },
           }}
         >
-          <img
-            alt="background_m"
-            src={BackgroundM}
-            // style={{ transform: "scaleX(-1)" }}
-          />
+          <img alt="background_m" src={BackgroundM} />
         </Box>
 
         {/* SM screen */}
@@ -177,11 +158,7 @@ export default function Home() {
             },
           }}
         >
-          <img
-            alt="background_sm"
-            src={BackgroundSM}
-            // style={{ transform: "scaleX(-1)" }}
-          />
+          <img alt="background_sm" src={BackgroundSM} />
         </Box>
 
         {/* S screen */}
@@ -201,11 +178,7 @@ export default function Home() {
             },
           }}
         >
-          <img
-            alt="background_s"
-            src={BackgroundS}
-            // style={{ transform: "scaleX(-1)" }}
-          />
+          <img alt="background_s" src={BackgroundS} />
         </Box>
 
         {/* XS screen */}
@@ -225,11 +198,7 @@ export default function Home() {
             },
           }}
         >
-          <img
-            alt="background_extrasmall"
-            src={BackgroundExtraSmall}
-            // style={{ transform: "scaleX(-1)" }}
-          />
+          <img alt="background_xs" src={BackgroundXS} />
         </Box>
 
         <Box
@@ -239,12 +208,10 @@ export default function Home() {
           zIndex={-1}
           bgcolor="rgba(5, 59, 80, 0.7)"
         />
-      </ComponentsAnimations>
 
       {renderComponent && (
-        <>
-          <TextAnimation />
-          <ComponentsAnimations>
+        <div>
+          <TextAnimation topPosition={navbarHeight} />
             <Stack
               ref={ref}
               position="relative"
@@ -304,8 +271,7 @@ export default function Home() {
                 </Button>
               </Box>
             </Stack>
-          </ComponentsAnimations>
-        </>
+        </div>
       )}
     </>
   );

@@ -1,14 +1,16 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
-import ComponentsAnimations from "../components/ComponentsAnimations";
 
 import RosalindLargeScreen from "../images/rosalindLargeScreen.png";
 import RosalindMediumScreen from "../images/rosalindMediumScreen.png";
 
 import { theme } from "../theme/overrideTheme";
+import { useOutletContext } from "react-router-dom";
 
 export default function Rosalind() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const navbarHeight = useOutletContext()
 
   const windowResize = () => {
     setWindowWidth(window.innerWidth);
@@ -37,7 +39,7 @@ export default function Rosalind() {
   const BoxParagraph = ({ dividerText, paragraphText, ...other }) => (
     <Box
       position="relative"
-      padding={5}
+      paddingX={5}
       width={windowWidth < 600 ? "auto" : "50%"}
       sx={{ ...other }}
     >
@@ -55,7 +57,7 @@ export default function Rosalind() {
   );
 
   return (
-    <ComponentsAnimations>
+    <>
       <Box
         position="fixed"
         zIndex={-1}
@@ -85,7 +87,7 @@ export default function Rosalind() {
 
       <Stack
         position="relative"
-        top={window.innerHeight / 5}
+        top={navbarHeight}
         height={window.innerHeight - 135}
         gap={2}
       >
@@ -111,6 +113,6 @@ export default function Rosalind() {
           paragraphText="Rosalind will be an experimental prototype with specific use for Escherichia coli: we have chosen this organism due to the vast amount of data available and the wide utilization in biotechnology."
         />
       </Stack>
-    </ComponentsAnimations>
+    </>
   );
 }

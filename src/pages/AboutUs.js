@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ComponentsAnimations from "../components/ComponentsAnimations";
 import { Box, Typography, Grid, IconButton } from "@mui/material";
 
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
@@ -8,9 +7,12 @@ import Lorenzo from "../images/aboutUs/lorenzo.png";
 import Paul from "../images/aboutUs/paul1.jpg"
 
 import { theme } from "../theme/overrideTheme";
+import { useOutletContext } from "react-router-dom";
 
 export default function AboutUs() {
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+  const navbarHeight = useOutletContext()
 
   const windowResize = () => {
     setWindowHeight(window.innerHeight);
@@ -40,7 +42,7 @@ export default function AboutUs() {
   ];
 
   return (
-    <ComponentsAnimations>
+    <>
       <Box
         position="fixed"
         zIndex={-1}
@@ -52,7 +54,7 @@ export default function AboutUs() {
       {/* Large screen */}
       <Box
         position="relative"
-        top={200}
+        top={navbarHeight}
         paddingX={5}
         sx={{
           display: {
@@ -152,7 +154,7 @@ export default function AboutUs() {
       {/* Medium Screen */}
       <Box
         position="relative"
-        top={200}
+        top={navbarHeight}
         paddingX={5}
         sx={{
           display: {
@@ -252,7 +254,7 @@ export default function AboutUs() {
       {/* Small Screen */}
       <Box
         position="relative"
-        top={120}
+        top={navbarHeight}
         paddingX={5}
         sx={{
           display: {
@@ -364,6 +366,6 @@ export default function AboutUs() {
           </Grid>
         </Grid>
       </Box>
-    </ComponentsAnimations>
+    </>
   );
 }

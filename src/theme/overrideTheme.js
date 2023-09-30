@@ -4,28 +4,37 @@ const pxToRem = (value) => {
   return `${value / 16}rem`;
 };
 
-const responsiveFontSize = ({ xs, s, sm, md, lg, xl, xxl }) => {
+const responsiveFontSize = ({ sRotated, xxs, xs, s, sm, md, lg, xl, xxl, xxxl }) => {
   return {
-    "@media (min-width: 200px)": {
-      fontSize: pxToRem(xs)
+    "@media screen and (orientation: landscape)": {
+      fontSize: pxToRem(sRotated)
+    },
+    "@media (min-width: 300px)": {
+      fontSize: pxToRem(xxs)
     },
     "@media (min-width: 360px)": {
+      fontSize: pxToRem(xs)
+    },
+    "@media (min-width: 700px)": {
       fontSize: pxToRem(s)
     },
-    "@media (min-width:480px)": {
+    "@media (min-width:1024px)": {
       fontSize: pxToRem(sm),
     },
-    "@media (min-width:768px)": {
+    "@media (min-width:1200px)": {
       fontSize: pxToRem(md),
     },
-    "@media (min-width:1024px)": {
+    "@media (min-width:1920px)": {
       fontSize: pxToRem(lg),
     },
-    "@media (min-width:1200px)": {
+    "@media (min-width:2200px)": {
       fontSize: pxToRem(xl),
     },
-    "@media (min-width:1920px)": {
+    "@media (min-width:3200px)": {
       fontSize: pxToRem(xxl),
+    },
+    "@media (min-width:3600px)": {
+      fontSize: pxToRem(xxxl),
     },
   };
 };
@@ -56,16 +65,18 @@ export const theme = createTheme({
   typography: {
     fontFamily: "Overpass",
     h1: {
-
       fontSize: pxToRem(40),
       ...responsiveFontSize({
-        xs: 50,
-        s: 65,
-        sm: 70,
-        md: 100,
-        lg: 130,
-        xl: 150,
-        xxl: 200,
+        sRotated: 50,
+        xxs: 45,
+        xs: 64,
+        s: 130,
+        sm: 180,
+        md: 150,
+        lg: 230,
+        xl: 300,
+        xxl: 360,
+        xxxl: 200
       }),
     },
     h3: {
